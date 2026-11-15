@@ -1,8 +1,14 @@
 # Olist E-Commerce Analysis
 
-Analysis of marketplace sales, delivery performance, and customer satisfaction using the Olist dataset. This report focuses on delivery performance.
+This project uses the Olist dataset to analyze marketplace sales, delivery performance, and customer satisfaction.
 
-**Project status:** Delivery analysis is complete and validated in Excel and Power BI. The next phase will explore how delivery delays relate to customer review scores.
+**Project status**
+
+| Area | Status |
+| --- | --- |
+| Delivery performance | Complete. Validated in Excel and documented in a three-page Power BI report. |
+| Customer satisfaction | Next. Compare review scores for on-time and late deliveries. |
+| Marketplace sales | Planned. Analyze monthly item sales and sales by product category. |
 
 ## Power BI Delivery Analysis
 
