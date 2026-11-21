@@ -6,19 +6,19 @@ This project uses the Olist dataset to analyze marketplace sales, delivery perfo
 
 | Area | Status |
 | --- | --- |
-| Delivery performance | Complete. Validated in Excel and documented in a three-page Power BI report. |
+| Delivery performance | Complete |
 | Customer satisfaction | Next. Compare review scores for on-time and late deliveries. |
 | Marketplace sales | Planned. Analyze monthly item sales and sales by product category. |
 
-## Power BI Delivery Analysis
+## Delivery Performance Analysis (Power BI)
+
+- **Delivery Overview:** Of 96,470 eligible delivered orders (orders with populated delivery and estimated delivery dates), 6,534 (6.77%) arrived late. March 2018 had the highest late rate among months with at least 100 eligible orders, at 18.96%.
+- **Delivery Exploration:** Late orders rose from 926 in February to 1,328 in March 2018. Minas Gerais and São Paulo accounted for 196 of the 402 net additional late orders (48.8%).
+- **Minas Gerais Deep Dive:** Minas Gerais was selected because it contributed the largest increase in late orders: 109, or 27.1% of the overall net increase. Furthermore, orders with the same 21- or 22-day delivery estimate were late more often in March than in February. The carrier-to-delivery P90 rose by about 7 days for the 21-day delivery estimate group and 10 days for the 22-day group. This points to transit after carrier handoff as a recommended stage to investigate.
+
+*Note: Carrier-to-delivery P90 is the time within which approximately 90% of orders with valid carrier and delivery timestamps reached the customer after carrier handoff.*
 
 [Download the Power BI report](./Olist%20E-Commerce%20Analysis.pbix)
-
-- **Delivery Overview:** Of 96,470 eligible delivered orders, 6,534 (6.77%) arrived late. March 2018 had the highest late rate among months with at least 100 eligible orders, at 18.96%.
-- **Delivery Exploration:** Late orders rose from 926 in February to 1,328 in March 2018. Minas Gerais and São Paulo accounted for 196 of the 402 net additional late orders (48.8%).
-- **Minas Gerais Deep Dive:** Minas Gerais was selected because it contributed the largest increase in late orders: 109, or 27.1% of the overall net increase. Orders with the same 21- or 22-day delivery estimate were late more often in March than in February. The 90th-percentile time from carrier handoff to delivery rose by about 7 days for the 21-day group and 10 days for the 22-day group. This points to post-handoff transit as a stage to investigate further.
-
-## Delivery report screenshots
 
 ### Delivery Exploration
 
@@ -30,13 +30,13 @@ This project uses the Olist dataset to analyze marketplace sales, delivery perfo
 | São Paulo (SP) | 193 | 280 | 87 | 21.6% |
 | **MG and SP combined** | **259** | **455** | **196** | **48.8%** |
 
-The denominator for these contributions is the overall net increase of 402 late orders, including decreases in other states. MG was selected as a focused case study because it contributed the largest absolute increase. This does not establish that MG had the largest late-rate deterioration or that SP needs no further investigation; those conclusions require comparing eligible-order volumes and late rates.
+Each percentage above was calculated by dividing the state’s increase in late orders by the overall net increase of 402 across all states.
 
 ### Minas Gerais Deep Dive
 
 ![Minas Gerais late orders analysis](screenshots/minas-gerais-deep-dive.png)
 
-Across eligible MG orders, median carrier-to-delivery time was similar in February and March (10.82 versus 10.97 days), while P90 increased from 20.91 to 24.98 days. The median estimated delivery window shortened from 26 to 22 days.
+Across eligible MG orders, median carrier-to-delivery time was similar in February and March (10.82 versus 10.97 days), while carrier-to-delivery P90 increased from 20.91 to 24.98 days. The median estimated delivery window shortened from 26 to 22 days.
 
 Comparing orders within the same estimated delivery windows:
 
@@ -45,9 +45,11 @@ Comparing orders within the same estimated delivery windows:
 | 21 days | 48 | 91 | 12.50% | 32.97% | 20.31 days | 27.25 days |
 | 22 days | 55 | 126 | 7.27% | 26.19% | 16.90 days | 26.91 days |
 
-Both groups had higher late rates and longer carrier-to-delivery P90 in March. These descriptive results identify post-handoff transit as a priority for investigation; they do not establish the cause of the delays.
+Both groups had higher late rates and longer carrier-to-delivery P90 in March.
 
-The screenshots capture the latest report annotations. The downloadable PBIX remains the previously uploaded version until the latest saved report is provided.
+## Recommendation
+
+Investigate what changed in Minas Gerais deliveries between February and March 2018, focusing on the time from carrier handoff to customer delivery. Prioritize orders with 21- and 22-day delivery estimates, where both late rates and carrier-to-delivery P90 increased.
 
 ## Excel Validation
 
